@@ -1,8 +1,8 @@
 from pathlib import Path
 import re
 
-# list all the textfiles in the ~/python/ directory
-p = Path(Path.home() / 'python' / 'automatetheboringstuff' )
+# list all the textfiles in the ~/python/automatetheboringstuff/Chapter9 directory
+p = Path(Path.home() / 'python' / 'automatetheboringstuff' / 'Chapter9' )
 files_list = list(p.glob('*.txt'))
 
 # compile the regex from user prompt

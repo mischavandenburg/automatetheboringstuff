@@ -8,8 +8,8 @@ import re
 # ask the user which file to open
 file_name = input('Enter the filename. For example, grammar.txt: ')
 
-# my script and .txt file are located in ~/python/automatetheboringstuff/
-text_file = open(Path.home() / 'python' / 'automatetheboringstuff' / file_name )
+# my script and .txt file are located in ~/python/automatetheboringstuff/Chapter9
+text_file = open(Path.home() / 'python' / 'automatetheboringstuff' / 'Chapter9' / file_name )
 
 # read the file and store in variable & close
 source_text = text_file.read()
