@@ -18,7 +18,6 @@ for folder_name, sub_folder, file_names in os.walk(source):
         bytes = os.path.getsize(p)
         size = bytes / 1048576
         if size > 100:
-           # a = str(size / 100000)
             print(file_name + " " + "size: "  + str(round(size)) + "MB")
 
 
