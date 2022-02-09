@@ -8,38 +8,44 @@ so that a new file can be added.
 
 Solution by Mischa van den Burg
 www.mischavandenburg.com
+
+work in progress!
 """
 
 from pathlib import Path, PurePath
 import os, re
 
-regex = re.compile('spam')
+regex = re.compile(r"(([a-zA-Z])*)(([0-9])+)(\.txt)+$")
 source = Path(Path.home() / 'python' / 'automatetheboringstuff' / 'chapter10' / 'textfiles' )
 
+name = "spam001.txt"
+
+result = regex.search(name)
+
+old_filenames = []
+new_filenames = []
+
+# print(result.groups())
 """
-TO DO
-create 3 regex statements
-start with the .txt file extention and remove that
-i already made this in one of the programs, make it that it removes it
-
-regex matching all letters
-regex matching all numbers
-
-for matching the numbers
-
-it only needs to do gaps, no need to think about all the other cases
-keep it simple
-
 if a != b + 1, next number is a + 1
-
-
-
 """
-
 
 for folder_names, sub_folders, file_names in os.walk(source):
     for file_name in file_names:
+        pattern = regex.search(file_name)
+        print(pattern[3])
+        old_filenames.append(int(pattern[3]))
 
-print(working_list)
-#            print(test)
-           # print(file_name)
+
+print(sorted(old_filenames))
+
+old_filenames = sorted(old_filenames)
+
+
+for i in old_filenames:
+    if i != i + 1:
+        new_filenames.append(i+1)
+    else: 
+        new_filenames.append(i)
+
+print(new_filenames)
