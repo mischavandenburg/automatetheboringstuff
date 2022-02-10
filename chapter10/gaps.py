@@ -18,34 +18,23 @@ import os, re
 regex = re.compile(r"(([a-zA-Z])*)(([0-9])+)(\.txt)+$")
 source = Path(Path.home() / 'python' / 'automatetheboringstuff' / 'chapter10' / 'textfiles' )
 
-name = "spam001.txt"
-
-result = regex.search(name)
-
 old_filenames = []
 new_filenames = []
-
-# print(result.groups())
-"""
-if a != b + 1, next number is a + 1
-"""
 
 for folder_names, sub_folders, file_names in os.walk(source):
     for file_name in file_names:
         pattern = regex.search(file_name)
-        print(pattern[3])
-        old_filenames.append(int(pattern[3]))
-
-
-print(sorted(old_filenames))
+        old_filenames.append(pattern[3])
 
 old_filenames = sorted(old_filenames)
+first_number = int(old_filenames[0])
+a = str(first_number)
 
+b = []
 
-for i in old_filenames:
-    if i != i + 1:
-        new_filenames.append(i+1)
-    else: 
-        new_filenames.append(i)
+for i in range(len(old_filenames)):
+    x = str(first_number + i)
+    b.append(x.zfill(3))
+    # print(first_number + i)
 
-print(new_filenames)
+print(b)
