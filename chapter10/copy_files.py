@@ -5,7 +5,8 @@ Selective Copy assignment solution
 Write a program that walks through a folder tree and searches for files with a certain file extension (such as .pdf or .jpg).
 Copy these files from whatever location they are in to a new folder.
 
-Mischa van den Burg
+Solution by Mischa van den Burg
+www.mischavandenburg.com
 04-02-2022
 """
 
